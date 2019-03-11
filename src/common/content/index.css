@@ -1,0 +1,47 @@
+.content-page{
+    background: '#fff';
+    background-color: rgb(255, 255, 255);
+    color:black;
+    min-height: 240px;
+}
+
+.content-main{
+    padding: 74px 570px 15px 100px;
+}
+
+.content-list{
+  position: relative;
+  top:30px;
+  left: 40px;
+  width: 950px;
+}
+
+.card-manpage{
+    position: absolute;
+    width: 300px;
+    left:1200px;
+    top:74px;
+}
+.card-options{
+  position: absolute;;
+  width: 300px;
+  left:1200px;
+  top:234px;
+}
+
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 160px;
+    line-height: 160px;
+    background: #364d79;
+    overflow: hidden;
+  }
+  
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.icon{
+  margin-bottom: 5px;
+  margin-right: 1200px;
+}

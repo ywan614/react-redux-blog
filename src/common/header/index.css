@@ -1,0 +1,10 @@
+.logo{
+    margin-right:10px;
+    position:absolute;
+    left: 88px;
+    height:68px;
+    width:68px;
+    background:url(../../resource/logo.png);
+    background-size: 68px,68px;
+    display:block;
+}

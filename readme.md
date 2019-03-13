@@ -6,4 +6,4 @@
 5.使用react-router实现页面跳转  
 
 页面预览
-![img](https://github.com/ywan614/react-redux-blog/blob/master/Screen%20Shot%202019-03-12%20at%204.18.29%20PM.png)
+![img](https://github.com/ywan614/react-redux-blog/blob/master/Screen%20Shot%202019-03-13%20at%205.50.43%20PM.png)

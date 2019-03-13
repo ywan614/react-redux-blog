@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layout,Carousel,Card, Icon,List,Avatar} from 'antd';
+import {Layout,Card, Icon,List,Avatar,Input,Button} from 'antd';
 import './index.css';
 const {
     Content
@@ -14,16 +14,22 @@ const IconText = ({ type, text }) => (
     </span>
 );
 
+const { TextArea } = Input;
+
 const MainContent = (props)=>{
     return(
         <Layout>
             <Content className = 'content-main'>
-                <Carousel effect="fade">
-                    <div><h3>1</h3></div>
-                    <div><h3>2</h3></div>
-                    <div><h3>3</h3></div>
-                    <div><h3>4</h3></div>
-                </Carousel>
+                <Card className = "card-postArea" >
+                    <Avatar src='https://s3.amazonaws.com/uifaces/faces/twitter/beweinreich/128.jpg'/>
+                    <TextArea 
+                        className='textArea' 
+                        rows={4} 
+                        placeholder = 'whats on your mind?'
+                        onChange = {props.inOnChange}
+                        />
+                    <Button className='btn-submit' type="primary" onClick = {props.postBlog}>发布</Button>
+                </Card>
                 <div className = "content-page">
                     <List className = 'content-list'
                         itemLayout="horizontal"
@@ -31,6 +37,7 @@ const MainContent = (props)=>{
                         renderItem={item =>(
                         <Card
                             bordered = {false}
+                            size = {400}
                             actions={[<IconText type="heart" text="喜欢" />, <IconText type="edit" text="评论" />, <IconText type="star" text="收藏" />]}
                         >
                             <Meta
@@ -38,28 +45,25 @@ const MainContent = (props)=>{
                                 title = {item.name}
                                 description = {item.blogs}
                             />
+                            <img className = 'img' alt= '' src = {item.img}  height="300px" width="570px" />
                         </Card>
                         )}
                     />
                 </div>
-                <Card
-                    className = "card-manpage"
-                    actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
-                >
-                    <Meta
-                    title="Card title"
-                    description="This is the description"
+                <Card className="card-news" title="热点新闻">
+                    <List 
+                        itemLayout = "vertical"
+                        dataSource={props.news}
+                        renderItem = {item=>(
+                        <Card bordered = {false}>      
+                            <a href='./' >
+                                <span><h2>{item.title}</h2> <img alt= 'img' src={item.img} height="130px" width="300px" /></span>
+                            </a>
+                        </Card>
+                        )}
+                       
                     />
                 </Card>
-                <Card className="card-options" >
-                    <a href="./">我的收藏</a> <br/>
-                    <a href="./">我的关注</a> <br/> 
-                    <a href="./">服务中心</a> <br/>
-                    <a href="./">版本</a>
-                </Card>
-            </Content>
-            <Content className = 'content-options'>
-                
             </Content>
         </Layout>
         

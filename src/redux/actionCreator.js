@@ -1,21 +1,36 @@
-import {GET_BLOG,AXIOS_GET_FAIL,AXIOS_GET_SUCC} from './actionTypes';
+import {GET_BLOG,AXIOS_GET_FAIL,AXIOS_GET_SUCC,IN_CHANGE,ADD_POST} from './actionTypes';
 
 export function getBlog(){
     return{
         type: GET_BLOG,
     }
 }
-
-export function axSucc(res){
+//filter 是为了区分重名的action
+export function axSucc(res,filter){
     return{
         type: AXIOS_GET_SUCC,
-        res
+        res,
+        filter
     }
 }
 
-export function axFail(err){
+export function axFail(err,filter){
     return{
         type: AXIOS_GET_FAIL,
-        err
+        err,
+        filter
+    }
+}
+
+export function inputOnChange(s){
+    return{
+        type:IN_CHANGE,
+        value:s
+    }
+}
+
+export function addPost(){
+    return{
+        type:ADD_POST,
     }
 }

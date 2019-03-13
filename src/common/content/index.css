@@ -3,45 +3,53 @@
     background-color: rgb(255, 255, 255);
     color:black;
     min-height: 240px;
+    margin-top: 20px;
 }
 
 .content-main{
-    padding: 74px 570px 15px 100px;
+    padding: 74px 700px 15px 350px;
 }
 
 .content-list{
   position: relative;
-  top:30px;
-  left: 40px;
-  width: 950px;
+  top:30px
 }
 
-.card-manpage{
+.card-postArea{
+  margin-top: 20px;
+}
+
+.card-news{
     position: absolute;
-    width: 300px;
-    left:1200px;
-    top:74px;
+    width: 378px;
+    left:1080px;
+    top:94px;
 }
 .card-options{
   position: absolute;;
-  width: 300px;
+  width: 340px;
   left:1200px;
-  top:234px;
+  top:984px;
 }
 
-.ant-carousel .slick-slide {
-    text-align: center;
-    height: 160px;
-    line-height: 160px;
-    background: #364d79;
-    overflow: hidden;
-  }
-  
-.ant-carousel .slick-slide h3 {
-  color: #fff;
-}
 
 .icon{
   margin-bottom: 5px;
   margin-right: 1200px;
+}
+
+.img{
+  margin-top: 15px;
+  align-content: center;
+}
+
+.textArea{
+  margin-top: 5px;
+
+}
+
+.btn-submit{
+  position: relative;
+  margin-top: 15px;
+  left: 500px;
 }

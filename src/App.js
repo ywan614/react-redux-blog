@@ -18,14 +18,23 @@ class App extends Component {
   }
 
   componentDidMount(){
+    //获取异步数据
     axios.get('https://5c84e22463a5850014a821ab.mockapi.io/blogs')
     .then((res)=>{
-      console.log(res)
-      this.props.getSucc(res)
+      this.props.getSucc(res,"blogs")
     })
     .catch((err)=>{
-      this.props.getFail(err)
+      this.props.getFail(err,"blogs")
     })
+
+    axios.get('https://5c84e22463a5850014a821ab.mockapi.io/news')
+    .then((res)=>{
+      this.props.getSucc(res,"news")
+    })
+    .catch((err)=>{
+      this.props.getFail(err,"news")
+    })
+    
   }
 
 }
@@ -41,13 +50,13 @@ const mapStatetoProps = (state) =>{
 const mapDispatchToProps = (dispatch) =>{
     return{
       //获取成功
-      getSucc(res){
-        const action = axSucc(res)
+      getSucc(res,filter){
+        const action = axSucc(res,filter)
         dispatch(action)
       },
       //获取失败
-      getFail(err){
-        const action = axFail(err)
+      getFail(err,filter){
+        const action = axFail(err,filter)
         dispatch(action)
       },
 

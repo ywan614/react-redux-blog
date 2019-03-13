@@ -3,6 +3,7 @@ import TopHeader from "./header/index";
 import MainContent from "./content/index";
 import {connect} from 'react-redux';
 import {Layout} from "antd";
+import {inputOnChange,addPost} from "../redux/actionCreator";
 
 const MainUI = (props)=>{
     return(
@@ -11,6 +12,9 @@ const MainUI = (props)=>{
                 <TopHeader/>
                 <MainContent
                  blogs = {props.blogs}
+                 news = {props.news}
+                 inOnChange = {props.inOnChange}
+                 postBlog = {props.postBlog}
                 />
             </Layout>
         </Fragment>
@@ -19,14 +23,24 @@ const MainUI = (props)=>{
 
 const mapStatetoProps = (state) =>{
     return {    
-      blogs: state.blogs,
-      isloaded:state.isloaded
+      blogs: state.blog.blogs,
+      news:state.news.news,
+      //input:state.posting.input,
     }
   }
 
 const mapDispatchToProps = (dispatch)=>{
     return{
-        
+        //输入框改变时
+        inOnChange(e){
+            const action = inputOnChange(e.target.value)
+            dispatch(action)
+        },
+        //发布新微博
+        postBlog(){
+            const action = addPost()
+            dispatch(action)
+        }
     }
 }
   

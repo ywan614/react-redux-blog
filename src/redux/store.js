@@ -1,5 +1,5 @@
 import { createStore ,applyMiddleware} from 'redux';
-import  reducer from './blogs/reducer';
+import  reducer from './reducer';
 import createSagaMiddleware from 'redux-saga';
 import {loadSaga} from '../sagas/loadSaga';
 import { composeWithDevTools } from 'redux-devtools-extension';

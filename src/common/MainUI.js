@@ -15,6 +15,7 @@ const MainUI = (props)=>{
                  news = {props.news}
                  inOnChange = {props.inOnChange}
                  postBlog = {props.postBlog}
+                 input={props.input}
                 />
             </Layout>
         </Fragment>
@@ -22,10 +23,10 @@ const MainUI = (props)=>{
 }
 
 const mapStatetoProps = (state) =>{
-    return {    
+    return {
       blogs: state.blog.blogs,
       news:state.news.news,
-      //input:state.posting.input,
+      input:state.posting.blogs,
     }
   }
 

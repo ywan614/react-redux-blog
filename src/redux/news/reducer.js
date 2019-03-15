@@ -9,7 +9,6 @@ const newsReducer = (state = initState ,action)=>{
     switch (action.type){
         case AXIOS_GET_SUCC:
             if(action.filter === "news"){
-                console.log(action.filter)
                 return Object.assign({},state,{
                     news: action.res.data,
                     isLoaded: true

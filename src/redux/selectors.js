@@ -1,0 +1,1 @@
+export const posting = (state) => state.posting

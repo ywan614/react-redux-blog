@@ -50,21 +50,27 @@ const MainContent = (props)=>{
                         )}
                     />
                 </div>
-                <Card className="card-news" title="热点新闻">
-                    <List 
-                        itemLayout = "vertical"
-                        dataSource={props.news}
-                        renderItem = {item=>(
-                        <Card bordered = {false}>      
-                            <a href='./' >
-                                <span><h2>{item.title}</h2> <img alt= 'img' src={item.img} height="130px" width="300px" /></span>
-                            </a>
-                        </Card>
-                        )}
-                       
-                    />
-                </Card>
             </Content>
+            <Card className="card-news" title="推荐群组">
+                <List 
+                    itemLayout = "vertical"
+                    dataSource={props.news}
+                    renderItem = {item=>(
+                    <Card 
+                        href = "./"
+                        hoverable
+                        style = {{marginTop:"5px"}}
+                        bordered = {true}
+                        cover = { <img alt= 'img' src={item.img} height="130px" width="300px" />}
+                    >      
+                        <Meta
+                            title={item.title}
+                        />
+                    </Card>
+                    )}
+                    
+                />
+            </Card>
         </Layout>
         
     )

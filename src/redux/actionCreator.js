@@ -1,4 +1,8 @@
-import {GET_BLOG,AXIOS_GET_FAIL,AXIOS_GET_SUCC,IN_CHANGE,ADD_POST} from './actionTypes';
+import {
+    GET_BLOG,AXIOS_GET_FAIL,AXIOS_GET_SUCC,IN_CHANGE,ADD_POST,ADD_POST_ASYNC_SUCC,
+    ADD_POST_ASYNC_FAIL
+
+} from './actionTypes';
 
 export function getBlog(){
     return{
@@ -29,8 +33,23 @@ export function inputOnChange(s){
     }
 }
 
-export function addPost(){
+export function addPost(data){
     return{
         type:ADD_POST,
+        value:data,
+    }
+}
+
+export function addPostAsyncSucc(data){
+    return{
+        type:ADD_POST_ASYNC_SUCC,
+        value:data
+    }
+}
+
+export function addPostAsyncFail(e){
+    return{
+        type:ADD_POST_ASYNC_FAIL,
+        value:e
     }
 }
